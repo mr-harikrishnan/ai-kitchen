@@ -5,14 +5,13 @@ import axios from "axios";
 import { useState } from "react";
 import Lottie from "react-lottie-player";
 import lottieJson from "../../public/animation/Cooker remix.json"
-import ReactMarkdown from "react-markdown";
 
 export default function Home() {
   const [text, setText] = useState()
   const [dish, setDish] = useState("")
   const [loading, setLoading] = useState(false)
 
-  let handleSubmit = async () => {
+  const handleSubmit = async () => {
     try {
       setLoading(true)
       const dishResponse = await axios.post("/api/chat", { dish })
